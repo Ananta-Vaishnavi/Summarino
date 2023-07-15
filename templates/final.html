@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Final HTML</title>
+    <style>
+      /* CSS styles here */
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+      }
+
+      .container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      h1 {
+        text-align: center;
+      }
+
+      p {
+        line-height: 1.5;
+      }
+
+      .output-box {
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin-top: 20px;
+        background-color: #f9f9f9;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Final HTML</h1>
+      <p>This is the final HTML file.</p>
+
+      <div class="output-box">
+        <h2>Output</h2>
+        <div id="summary-container"></div>
+      </div>
+    </div>
+
+    <!-- Add the necessary JavaScript code here -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        // Handle form submission
+        $("form").submit(function (event) {
+          event.preventDefault(); // Prevent the default form submission
+
+          // Show loading container
+          $("#loading-container").show();
+
+          // Get the input text from the form
+          var inputText = $("#article-text").val() || $("#article-url").val();
+
+          // Send an AJAX POST request to the Flask route
+          $.ajax({
+            url: "/summarize",
+            method: "POST",
+            data: { input_text: inputText },
+            success: function (response) {
+              // Hide loading container
+              $("#loading-container").hide();
+
+              // Display the summary in the summary-container div
+              $("#summary-container").html(response.summary);
+            },
+            error: function (error) {
+              console.error(error);
+            },
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Include the jQuery library -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>Text Summarizer</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="../static/css/index.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="text-center">Text Summarizer</h1>
+      <form action="/summarize" method="POST">
+        <div class="form-group">
+          <label for="article-url" class="input-label"
+            >You can either enter a URL or paste the text:</label
+          >
+          <input
+            type="text"
+            name="input_text"
+            id="article-url"
+            class="form-control"
+            placeholder="Enter Article URL"
+          />
+        </div>
+        <div class="form-group">
+          <p class="mb-1">OR</p>
+          <textarea
+            name="input_text"
+            id="article-text"
+            class="form-control"
+            rows="10"
+            placeholder="Paste Article Text"
+          ></textarea>
+        </div>
+        <button
+          type="submit"
+          id="summarize-button"
+          class="btn btn-primary btn-block"
+        >
+          Summarize this
+        </button>
+      </form>
+    </div>
+    <script src="../static/js/index.js"></script>
+  </body>
+</html>
