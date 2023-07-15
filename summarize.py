@@ -23,7 +23,3 @@ def generate_summary(text):
             summary[0], skip_special_tokens=True) + " "
 
     return summarized_text
-
-
-text = """The US has "passed the peak" on new coronavirus cases, President Donald Trump said and predicted that some states would reopen this month."""
-print(generate_summary(text))

@@ -18,9 +18,8 @@ $(document).ready(function() {
         // Hide loading container
         $('#loading-container').hide();
 
-        // Display the summary in a new div or element
-        // Replace 'summary-container' with the appropriate container ID or selector
-        $('#summary-container').html(response.summary);
+        // Display the summary in the summary container
+        $('#summary-container').html(response);
       },
       error: function(error) {
         console.error(error);
