@@ -1,20 +1,21 @@
-from transformers import BartTokenizer, BartForConditionalGeneration
+from transformers import PegasusForConditionalGeneration, PegasusTokenizer
 
-# Load the pre-trained BART model and tokenizer
-model_name = 'facebook/bart-large-cnn'
-tokenizer = BartTokenizer.from_pretrained(model_name)
-model = BartForConditionalGeneration.from_pretrained(model_name)
+# Initialize the Pegasus model and tokenizer outside the function
+tokenizer = PegasusTokenizer.from_pretrained("google/pegasus-xsum")
+model = PegasusForConditionalGeneration.from_pretrained("google/pegasus-xsum")
 
 
 def generate_summary(text):
-    # Tokenize the input text
-    inputs = tokenizer([text], truncation=True, padding='longest',
-                       max_length=1024, return_tensors='pt')
 
-    # Generate the summary
-    summary_ids = model.generate(
-        inputs['input_ids'], num_beams=4, min_length=30, max_length=100, early_stopping=True)
-    summary = [tokenizer.decode(g, skip_special_tokens=True,
-                                clean_up_tokenization_spaces=False) for g in summary_ids]
+    # Encode the text using the tokenizer
+    tokens = tokenizer.encode(
+        text, truncation=True, padding="longest", return_tensors="pt")
 
-    return summary[0]
+    # Generate the summary for the text
+    summary = model.generate(tokens, max_length=200)
+
+    # Decode the summary and return it as the summarized text
+    summarized_text = tokenizer.decode(
+        summary[0], skip_special_tokens=True)
+
+    return summarized_text
