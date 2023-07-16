@@ -22,6 +22,14 @@
       href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     />
     <link rel="stylesheet" href="../static/css/index.css" />
+    <style>
+      /* Add custom CSS to style the output container */
+      .summarino-box {
+        border: 2px solid #ccc;
+        border-radius: 10px;
+        padding: 10px;
+      }
+    </style>
   </head>
   <body>
     <div class="container">
@@ -64,18 +72,11 @@
         </div>
         <div class="card-body">
           <h2 class="text-center">Output</h2>
-          <!-- Add the summary container -->
-          <div class="summarino-box mt-4">
-            <textarea
-              id="summary-container"
-              class="form-control form-control-lg"
-              readonly
-            ></textarea>
-          </div>
+          <!-- Remove the textarea and use the custom output container -->
+          <div class="summarino-box mt-4" id="summary-container"></div>
         </div>
       </div>
     </div>
-
     <script src="../static/js/index.js"></script>
   </body>
 </html>
