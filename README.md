@@ -6,8 +6,10 @@ This project is a web-based text summarizer that utilizes the Transformers libra
 The article summarizer utilizes advanced natural language processing techniques to condense lengthy articles into concise summaries. The summarization process involves several steps:
 
 URL Summarization: If a URL is provided, the system retrieves the content from the specified link and extracts the main ideas and essential details from the article. This is done by analyzing the text, identifying important sentences, and constructing a summary that captures the essence of the article.
+[See below] (https://github.com/Ananta-Vaishnavi/Summarino/blob/main/URL_Summary.png)
 
 Text Summarization: Alternatively, if no URL is provided, users can input their own text directly into the application. The system applies the same summarization techniques to the provided text, generating a summary that highlights the key points and crucial information.
+[See below] (https://github.com/Ananta-Vaishnavi/Summarino/blob/main/Text_summary.png)
 
 ## Functionality
 Google's PEGASUS stands as a cutting-edge model in the field of abstractive text summarization. It leverages the gap-sentence generation pre-training self-supervised objective, specifically designed for Transformer encoder-decoder models, to enhance fine-tuning performance for abstractive summarization tasks. Notably, PEGASUS has achieved state-of-the-art results across a broad range of 12 diverse summarization datasets.
