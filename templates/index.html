@@ -17,19 +17,6 @@
       <h1 class="text-center">Text Summarizer</h1>
       <form action="/summarize" method="POST">
         <div class="form-group">
-          <label for="article-url" class="input-label"
-            >You can either enter a URL or paste the text:</label
-          >
-          <input
-            type="text"
-            name="input_text"
-            id="article-url"
-            class="form-control"
-            placeholder="Enter Article URL"
-          />
-        </div>
-        <div class="form-group">
-          <p class="mb-1">OR</p>
           <textarea
             name="input_text"
             id="article-text"
@@ -48,7 +35,7 @@
       </form>
     </div>
 
-    <!-- Add the summary container -->
+    <!-- Summary container -->
     <div id="summary-container"></div>
 
     <script src="../static/js/index.js"></script>

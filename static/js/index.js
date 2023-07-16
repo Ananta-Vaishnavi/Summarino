@@ -7,7 +7,7 @@ $(document).ready(function() {
     $('#loading-container').show();
 
     // Get the input text from the form
-    var inputText = $('#article-text').val() || $('#article-url').val();
+    var inputText = $('#article-text').val();
 
     // Send an AJAX POST request to the Flask route
     $.ajax({
