@@ -1,66 +1,65 @@
-/* index.css */
-
 body {
-  background-color: #f4f4f4;
-  color: #333;
-  font-family: Arial, sans-serif;
-  padding-top: 20px;
+  background-color: #f0f5ff; /* Light blue background color */
+  font-family: "Tektur", sans-serif;
 }
 
 .container {
-  max-width: 600px; /* Adjust the max-width of the container */
+  max-width: 800px; /* Increase the width of the outer box */
+  margin: 0 auto;
   padding: 20px;
-  margin: auto;
-  text-align: center; /* Center-align the container content */
 }
 
-.input-label {
+.card {
+  margin-top: 30px;
+  background-color: #ffffff; /* White background color for the card */
+  border-radius: 8px;
+  border: 1px solid #dddddd;
+}
+
+.card-title {
+  font-size: 36px;
   text-align: center;
   margin-bottom: 20px;
 }
 
 .form-group {
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
-.mb-1 {
-  text-align: center;
-  margin-bottom: 10px;
+.input-label {
+  font-weight: bold;
+  text-align: center; /* Center the label text */
 }
 
-.input-field {
-  width: 100%;
-  padding: 8px;
-  font-size: 14px;
-  border-radius: 4px;
-  border: none;
+.input-subtext {
+  text-align: center; /* Center the "OR" text */
 }
 
-.loading-container {
-  display: none;
-  text-align: center;
-  margin-top: 20px;
+.form-control-lg {
+  width: 100%; /* Increase the width of the text inputs and URL inputs */
 }
 
-.loader {
-  border: 4px solid #007bff;
-  border-radius: 50%;
-  border-top: 4px solid #fff;
-  width: 20px;
-  height: 20px;
-  animation: spin 1s linear infinite;
+.btn-lg {
+  width: 100%; /* Increase the width of the "Summarize this" button */
 }
 
-.loading-text {
-  margin-top: 10px;
+.summarino-box {
+  margin-top: 30px;
+  border-radius: 8px;
+  border: 1px solid #dddddd;
+  padding: 20px;
+  display: flex;
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
 }
 
-.output-box {
-  border: 1px solid #ccc;
-  padding: 10px;
-  margin: 20px auto; /* Add margin before and after the box */
-  max-width: 500px; /* Adjust the width of the box */
-  background-color: #f9f9f9;
-  border-radius: 5px;
-  text-align: center; /* Center-align the box content */
+#summary-container {
+  width: 100%; /* Increase the width of the output box */
+  height: 300px; /* Increase the height of the output box */
+  background-color: transparent; /* Remove the background color */
+  
+}
+
+#summary-container:focus {
+  outline: none;
 }
