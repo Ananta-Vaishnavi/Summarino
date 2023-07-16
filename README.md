@@ -3,8 +3,17 @@
 This project is a web-based text summarizer that utilizes the Transformers library and specifically the BART (Bidirectional and AutoRegressive Transformers) model. The application is built using Flask as the backend framework and HTML, CSS, and JavaScript for the frontend.
 
 ## Functionality
+Google's PEGASUS stands as a cutting-edge model in the field of abstractive text summarization. It leverages the gap-sentence generation pre-training self-supervised objective, specifically designed for Transformer encoder-decoder models, to enhance fine-tuning performance for abstractive summarization tasks. Notably, PEGASUS has achieved state-of-the-art results across a broad range of 12 diverse summarization datasets.
 
-The summarizer takes a block of text as input and generates a concise summary of the text using the BART model. The BART model is a state-of-the-art language generation model that has been trained on a large corpus of data and is capable of producing high-quality summaries.
+In the realm of abstractive single-document summarization evaluation, XSum emerges as a notable dataset. Its primary objective is to generate concise one-sentence summaries that succinctly answer the question, "What is the article about?" The dataset encompasses an extensive collection of 226,711 news articles, each accompanied by a corresponding one-sentence summary.
+
+This project aims to showcase the capabilities of Google's PEGASUS model for abstractive text summarization and evaluate its performance using the XSum dataset. The main functionality of the project includes:
+
+1. Abstractive Text Summarization: The project utilizes the PEGASUS model, a state-of-the-art abstractive summarization model, to generate concise summaries from given input text. It employs the Transformer encoder-decoder architecture and the gap-sentence generation self-supervised objective for improved fine-tuning performance.
+
+2. XSum Dataset Evaluation: The project utilizes the XSum dataset, which consists of 226,711 news articles accompanied by one-sentence summaries. It evaluates the performance of the PEGASUS model by generating summaries for the articles and comparing them with the reference summaries provided in the dataset.
+
+3. State-of-the-Art Results: The PEGASUS model has achieved state-of-the-art results on 12 diverse summarization datasets. This project aims to showcase its performance on the XSum dataset and demonstrate its effectiveness in generating accurate and concise summaries.
 
 ## Working
 
