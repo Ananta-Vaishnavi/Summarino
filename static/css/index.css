@@ -41,6 +41,7 @@ h1 {
 
 .form-control-lg {
   width: 100%; /* Increase the width of the text inputs and URL inputs */
+  resize: vertical; /* Allow vertical resizing of the input text area */
 }
 
 .btn-lg {
@@ -49,7 +50,7 @@ h1 {
 
 .summarino-box {
   margin-top: 30px;
-  border-radius: 8px;
+  border-radius: 4px; /* Decrease the border radius of the output outline */
   border: 1px solid #dddddd;
   padding: 20px;
   display: flex;
@@ -59,7 +60,7 @@ h1 {
 
 #summary-container {
   width: 100%; /* Increase the width of the output box */
-  height: 300px; /* Increase the height of the output box */
+  height: 200px; /* Decrease the height of the output box */
   background-color: transparent; /* Remove the background color */
 }
 
