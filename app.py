@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, jsonify
 from summarize import generate_summary
 from web_extract import extract_data_from_webpage
 
@@ -12,15 +12,16 @@ def home():
 
 @app.route('/summarize', methods=['POST'])
 def summarize():
-    input_text = ''
+    if request.form.get('articleURL'):
+        article_url = request.form['articleURL']
+        article_text = extract_data_from_webpage(article_url)
+        summary = generate_summary(article_text)
+    elif request.form.get('articleText'):
+        summary = generate_summary(request.form['articleText'])
+    else:
+        return jsonify({'error': 'Invalid request'})
 
-    input_text = request.form['input_text']
-
-    print("Input text:", input_text)  # Print the input text for debugging
-
-    summary = generate_summary(input_text)
-
-    return render_template("final.html", output=summary)
+    return jsonify({'summary': summary})
 
 
 if __name__ == '__main__':

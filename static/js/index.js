@@ -7,19 +7,27 @@ $(document).ready(function() {
     $('#loading-container').show();
 
     // Get the input text from the form
-    var inputText = $('#article-text').val();
+    var articleText = $("#article-text").val().trim();
+    var articleURL = $("#article-url").val().trim();
+    var data = {};
+
+    if (articleText) {
+      data.articleText = articleText;
+    } else if (articleURL) {
+      data.articleURL = articleURL;
+    }
 
     // Send an AJAX POST request to the Flask route
     $.ajax({
       url: '/summarize',
       method: 'POST',
-      data: { input_text: inputText },
+      data: data,
       success: function(response) {
         // Hide loading container
         $('#loading-container').hide();
 
         // Display the summary in the summary container
-        $('#summary-container').html(response);
+        $('#summary-container').html(response.summary);
       },
       error: function(error) {
         console.error(error);
@@ -27,4 +35,3 @@ $(document).ready(function() {
     });
   });
 });
-

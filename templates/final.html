@@ -4,8 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Final HTML</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.5.0/css/bootstrap.min.css"
+    />
     <style>
-      /* CSS styles here */
       body {
         font-family: Arial, sans-serif;
         background-color: #f4f4f4;
@@ -46,40 +49,34 @@
         <h2>Output</h2>
         <div id="summary-container">{{ output }}</div>
       </div>
+
+      <form>
+        <div class="mb-3">
+          <label for="article-text" class="form-label">Input Text</label>
+          <textarea
+            class="form-control"
+            id="article-text"
+            rows="4"
+            placeholder="Enter text here"
+          ></textarea>
+        </div>
+        <!-- Uncomment the code below if using article URL input -->
+        <!--
+      <div class="mb-3">
+        <label for="article-url" class="form-label">Article URL</label>
+        <input type="text" class="form-control" id="article-url" placeholder="Enter article URL" />
+      </div>
+      -->
+        <button type="submit" class="btn btn-primary">Summarize</button>
+      </form>
+    </div>
+
+    <div id="loading-container" style="display: none">
+      <!-- Add a loading animation here -->
+      Loading...
     </div>
 
     <!-- Add the necessary JavaScript code here -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
-      $(document).ready(function () {
-        // Handle form submission
-        $("form").submit(function (event) {
-          event.preventDefault(); // Prevent the default form submission
-
-          // Show loading container
-          $("#loading-container").show();
-
-          // Get the input text from the form
-          var inputText = $("#article-text").val() || $("#article-url").val();
-
-          // Send an AJAX POST request to the Flask route
-          $.ajax({
-            url: "/summarize",
-            method: "POST",
-            data: { input_text: inputText },
-            success: function (response) {
-              // Hide loading container
-              $("#loading-container").hide();
-
-              // Display the summary in the summary-container div
-              $("#summary-container").html(response.summary);
-            },
-            error: function (error) {
-              console.error(error);
-            },
-          });
-        });
-      });
-    </script>
   </body>
 </html>

@@ -1,23 +1,20 @@
-from transformers import PegasusForConditionalGeneration, PegasusTokenizer
+from transformers import BartTokenizer, BartForConditionalGeneration
 
-# Initialize the Pegasus model and tokenizer outside the function
-tokenizer = PegasusTokenizer.from_pretrained("google/pegasus-xsum")
-model = PegasusForConditionalGeneration.from_pretrained("google/pegasus-xsum")
+# Load the pre-trained BART model and tokenizer
+model_name = 'facebook/bart-large-cnn'
+tokenizer = BartTokenizer.from_pretrained(model_name)
+model = BartForConditionalGeneration.from_pretrained(model_name)
 
 
 def generate_summary(text):
-    if len(text) > 5000:
-        text = text[:5000]
+    # Tokenize the input text
+    inputs = tokenizer([text], truncation=True, padding='longest',
+                       max_length=1024, return_tensors='pt')
 
-    tokens = tokenizer.encode(
-        text, truncation=True, padding="longest", return_tensors="pt")
-    # Specify the desired summary length
-    summary = model.generate(tokens, max_length=150)
-    summarized_text = tokenizer.decode(
-        summary[0], skip_special_tokens=True)
+    # Generate the summary
+    summary_ids = model.generate(
+        inputs['input_ids'], num_beams=4, min_length=30, max_length=100, early_stopping=True)
+    summary = [tokenizer.decode(g, skip_special_tokens=True,
+                                clean_up_tokenization_spaces=False) for g in summary_ids]
 
-    return summarized_text
-
-
-text = """Python is a high-level, general-purpose programming language. Its design philosophy emphasizes code readability with the use of significant indentation via the off-side rule. Python is dynamically typed and garbage-collected."""
-print(generate_summary(text))
+    return summary[0]
