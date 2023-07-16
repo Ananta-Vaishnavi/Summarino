@@ -14,10 +14,7 @@ def home():
 def summarize():
     input_text = ''
 
-    if request.form.get('article-url'):
-        input_text = request.form['article-url']
-    elif request.form.get('article-text'):
-        input_text = request.form['article-text']
+    input_text = request.form['input_text']
 
     print("Input text:", input_text)  # Print the input text for debugging
 
