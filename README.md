@@ -1,6 +1,6 @@
 # Summarino
 
-This project is a web-based text summarizer that utilizes the Transformers library and specifically the BART (Bidirectional and AutoRegressive Transformers) model. The application is built using Flask as the backend framework and HTML, CSS, and JavaScript for the frontend.
+This project is a web-based text summarizer that utilizes the Transformers library and specifically the Pegasus model. The application is built using Flask as the backend framework and HTML, CSS, and JavaScript for the frontend.
 
 ## How it Works
 The article summarizer utilizes advanced natural language processing techniques to condense lengthy articles into concise summaries. The summarization process involves several steps:
