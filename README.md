@@ -28,7 +28,9 @@ This project aims to showcase the capabilities of Google's PEGASUS model for abs
 
 ## Working
 
-![See below](https://github.com/Ananta-Vaishnavi/Summarino/blob/main/images/pegasus.png)
+<p align="center">
+  <img src="https://github.com/Ananta-Vaishnavi/Summarino/blob/main/images/Text_summary.png" alt="See below">
+</p>
 
 - **Self-Supervised Objective for Pre-training:**
 In the pre-training phase, several whole sentences are removed (masked) from documents, and the model is tasked with recovering these masked sentences. The objective is to output all the missing sentences concatenated together. This self-supervised task is challenging, as it requires the model to learn about language, general facts, and how to distill information from a document to generate a summary-like output. The advantage of self-supervision is that it allows the creation of many examples without human annotation, making it more scalable than purely supervised systems that require labeled data.
