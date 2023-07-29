@@ -50,6 +50,9 @@ Acknowledging that while automatic metrics like ROUGE are helpful for evaluating
 - **Test of Comprehension: Counting Ships:**
 As a test of the model's abilities, an example from a summarization dataset and the model-generated abstractive summary are provided. The model successfully "counts" ships from 2 to 5, but when a sixth ship ("HMS Alphabet") is added, it miscounts it as "seven." This indicates the model's limited ability to generalize its counting, but it is still considered impressive as it was not explicitly programmed to count, showing some level of "symbolic reasoning" in the model.
 
+<p align="center">
+  <img src="images/pegasus.gif" alt="Pegasus">
+</p>
 
 ## Getting Started
 
