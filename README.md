@@ -29,7 +29,7 @@ This project aims to showcase the capabilities of Google's PEGASUS model for abs
 ## Working
 
 <p align="center">
-  <img src="https://github.com/Ananta-Vaishnavi/Summarino/blob/main/images/Text_summary.png" alt="See below">
+  <img src="https://github.com/Ananta-Vaishnavi/Summarino/blob/main/images/pegasus.png" alt="See below">
 </p>
 
 - **Self-Supervised Objective for Pre-training:**
