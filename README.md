@@ -54,6 +54,18 @@ As a test of the model's abilities, an example from a summarization dataset and 
   <img src="images/pegasus.gif" alt="Pegasus">
 </p>
 
+## Why Pegasus
+
+- **Pretrained on Large Data:** Pegasus is trained on a massive dataset containing a wide range of documents from the web. This large-scale training allows it to learn diverse language patterns and relationships, making it effective for generating high-quality summaries.
+
+- **Abstractive Summarization:** Pegasus employs an abstractive approach to summarization, which means it can generate human-like summaries in its own words rather than simply extracting sentences from the input text. This results in more concise and coherent summaries that capture the main ideas effectively.
+
+- **Multi-Document Summarization:** Pegasus is capable of handling multi-document summarization tasks. It can efficiently process and summarize information from multiple sources, which is particularly useful for generating comprehensive summaries from various viewpoints or sources.
+
+- **Contextual Understanding:** The model uses transformer-based architectures, which excel at understanding the contextual relationships between words and sentences. This contextual understanding allows Pegasus to create summaries that capture the context and nuances present in the original text.
+
+- **Transfer Learning:** As part of the transformer family, Pegasus benefits from transfer learning. It is pretrained on a vast corpus of data, and this knowledge can be fine-tuned on specific summarization tasks with smaller datasets, leading to better performance on your specific use case.
+
 ## Getting Started
 
 To set up the project, follow these steps:
